@@ -1,0 +1,28 @@
+﻿@model MVCOnlineTicariOtomasyon.Models.SINIFLAR.Personel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Personel Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.PersonelID)
+        @Html.LabelFor(x => x.PersonelAd)
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelSoyAd)
+        @Html.TextBoxFor(x => x.PersonelSoyAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelGörsel)
+        @Html.TextBoxFor(x => x.PersonelGörsel, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Departman)
+        @Html.DropDownListFor(x=> x.DepartmanId, (List<SelectListItem>)ViewBag.dgr1, new {@class="form-control"})
+        <br />
+        <button class="btn btn-warning">GÜNCELLE</button>
+    </div>
+}

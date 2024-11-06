@@ -1,0 +1,25 @@
+﻿@model MVCOnlineTicariOtomasyon.Models.SINIFLAR.Cari
+
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Cari Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.CariAd)
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariSoyAd)
+    @Html.TextBoxFor(x => x.CariSoyAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariŞehir)
+    @Html.TextBoxFor(x => x.CariŞehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariMail)
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">KAYDET</button>
+</form>
+

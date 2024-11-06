@@ -1,0 +1,44 @@
+﻿@using MVCOnlineTicariOtomasyon.Models.SINIFLAR
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<br />
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>
+        KARGO NUMARASI:  @Html.TextBox("k")
+        <input type="submit" value="Ara" />
+
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+
+        <th>PERSONEL</th>
+        <th>ALICI</th>
+        <th>TARİH</th>
+        <th>TAKİP KODU</th>
+        <th>DETAYLAR</th>
+
+
+
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+
+            <td>@d.Personel</td>
+            <td>@d.Alıcı</td>
+            <td>@d.Tarih</td>
+            <td>@d.TakipKodu</td>
+
+            <td><a href="/Kargo/KargoDetay/@d.KargoDetayID" class="btn btn-Default" style="background-color:darkgoldenrod">DETAYLAR</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Kargo/YeniKargo" class="btn btn-primary">YENİ KARGO GİRİŞİ</a>

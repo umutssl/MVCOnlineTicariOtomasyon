@@ -1,0 +1,25 @@
+﻿@using MVCOnlineTicariOtomasyon.Models.SINIFLAR
+@model List<SatışHaretket>
+@{
+    ViewBag.Title = "Siparişlerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<br />
+<h2>SİPARİŞ GEÇMİŞİM</h2>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>ÜRÜN ADI</th>
+        <th>FİYAT</th>
+        <th>TARİH</th>
+    </tr>
+    @foreach(var c in Model)
+            {
+                <tr>
+                    <td>@c.Ürün.ÜrünAd</td>
+                    <td>@c.Fiyat</td>
+                    <td>@Convert.ToDateTime(c.Tarih).ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+</table>
